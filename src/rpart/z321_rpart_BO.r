@@ -140,7 +140,7 @@ EstimarGanancia  <- function( x )
 #------------------------------------------------------------------------------
 #Aqui empieza el programa
 
-setwd( "D:\\gdrive\\UBA2022\\" )
+setwd( "D:\\gdrive\\austral2022\\" )
 
 #cargo el dataset
 dataset  <- fread("./datasets/competencia1_2022.csv")   #donde entreno
