@@ -86,8 +86,8 @@ ArbolSimple  <- function( fold_test, data, param )
   prob_baja2  <- prediccion[, "BAJA+2"]  #esta es la probabilidad de baja
 
   #calculo la ganancia
-  ganancia_testing  <- data[ fold==fold_test ][ prob_baja2 > 1/60,  
-                                                sum( ifelse( clase_ternaria=="BAJA+2", 59000, -1000 ) )] 
+  ganancia_testing  <- data[ fold==fold_test ][ prob_baja2 > 1/40,  
+                                                sum( ifelse( clase_ternaria=="BAJA+2", 78000, -2000 ) )] 
 
   return( ganancia_testing )  #esta es la ganancia sobre el fold de testing, NO esta normalizada
 }
