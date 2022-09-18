@@ -154,11 +154,11 @@ pdf("promedios_nocero.pdf")
 
 for( campo in  campos_buenos )
 {
-  tbl   <- dataset[ foto_mes<=202101 & get(campo)!=0,
+  tbl   <- dataset[ foto_mes<=202105 & get(campo)!=0,
            list( "promedio" = mean( get(campo), na.rm=TRUE)) ,
            foto_mes ]
 
-  ceros <- dataset[ foto_mes<=202101 ,
+  ceros <- dataset[ foto_mes<=202105 ,
                     list( "zero_ratio" = sum(get(campo)==0, na.rm=TRUE)/.N ) ,
                     foto_mes ]
   
