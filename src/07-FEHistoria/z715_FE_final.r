@@ -525,7 +525,7 @@ CanaritosAsesinos  <- function( canaritos_ratio=0.2 )
   campos_buenos  <- setdiff( colnames(dataset), c("clase_ternaria","clase01", "foto_mes" ) )
 
   azar  <- runif( nrow(dataset) )
-  dataset[ , entrenamiento := foto_mes>= 202008 &  foto_mes<= 202111  & ( clase01==1 | azar < 0.10 ) ]
+  dataset[ , entrenamiento := foto_mes>= 202008 &  foto_mes<= 202101  & ( clase01==1 | azar < 0.10 ) ]
 
   dtrain  <- lgb.Dataset( data=    data.matrix(  dataset[ entrenamiento==TRUE, campos_buenos, with=FALSE]),
                           label=   dataset[ entrenamiento==TRUE, clase01],
@@ -533,9 +533,9 @@ CanaritosAsesinos  <- function( canaritos_ratio=0.2 )
                           free_raw_data= FALSE
                         )
 
-  dvalid  <- lgb.Dataset( data=    data.matrix(  dataset[ foto_mes==202101, campos_buenos, with=FALSE]),
-                          label=   dataset[ foto_mes==202101, clase01],
-                          weight=  dataset[ foto_mes==202101, ifelse(clase_ternaria=="BAJA+2", 1.0000001, 1.0)],
+  dvalid  <- lgb.Dataset( data=    data.matrix(  dataset[ foto_mes==202103, campos_buenos, with=FALSE]),
+                          label=   dataset[ foto_mes==202103, clase01],
+                          weight=  dataset[ foto_mes==202103, ifelse(clase_ternaria=="BAJA+2", 1.0000001, 1.0)],
                           free_raw_data= FALSE
                           )
 
