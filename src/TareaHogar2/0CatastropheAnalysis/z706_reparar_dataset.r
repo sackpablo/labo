@@ -218,7 +218,7 @@ dataset[  , tmobile_app := NULL ]
 dir.create( paste0( "./exp/", kexperimento, "/"), showWarnings = FALSE )
 setwd(paste0( "./exp/", kexperimento, "/"))   #Establezco el Working Directory DEL EXPERIMENTO
 
-
+setorder( dataset, numero_de_cliente, foto_mes )
 
 #corrijo los  < foto_mes, campo >  que fueron pisados con cero
 switch( 
