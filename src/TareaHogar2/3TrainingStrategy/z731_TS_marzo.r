@@ -60,7 +60,7 @@ fwrite( dataset[ foto_mes %in% kfuture, ],
         sep= "," )
 
 #grabo los datos donde voy a entrenar los Final Models
-fwrite( dataset[ foto_mes %in% kfuture, ],
+fwrite( dataset[ foto_mes %in% kfinal_train, ],
         file= "dataset_train_final.csv.gz",
         logical01= TRUE,
         sep= "," )
